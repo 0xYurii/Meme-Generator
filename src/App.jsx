@@ -1,20 +1,12 @@
-import React from "react"
+import Header from "./components/Header"
+import Main from "./components/Main"
 
 export default function App() {
-    const [starWarsData, setStarWarsData] = React.useState({})
-    const [count, setCount] = React.useState(1)
-    
-    React.useEffect(()=>{
-        fetch(`https://swapi.py4e.com/api/people/${count}`)  
-        .then(res=>res.json())
-        .then(data=>setStarWarsData(data))
-    },[count])
     
     return (
-        <div>
-            <h2>The count is {count}</h2>
-            <button onClick={() => setCount(prevCount => prevCount + 1)}>Get next characte</button>
-            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-        </div>
+        <>
+            <Header />
+            <Main />
+        </>
     )
 }
