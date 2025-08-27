@@ -3,12 +3,12 @@ import React from "react"
 export default function App() {
     const [starWarsData, setStarWarsData] = React.useState({})
     const [count, setCount] = React.useState(0)
-    
-    console.log("Rendered!")
-    
+
     React.useEffect(()=>{
-      console.log("Effect function ran")
-    },[count])
+        fetch("https://swapi.py4e.com/api/people/1")  // Different domain
+        .then(res=>res.json())
+        .then(data=>setStarWarsData(data))
+    },[])
     
     return (
         <div>
