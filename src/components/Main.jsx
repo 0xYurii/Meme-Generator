@@ -14,14 +14,6 @@ export default function Main() {
             .then(data => setAllMemes(data.data.memes))
     }, [])
     
-    /**
-     * Challenge: Get a random image from the array of
-     * allMemes when the user clicks the button. Once
-     * you've gotten a random image from the array, make
-     * sure to write the code that will display that
-     * random meme image to the page.
-     */
-    
     function handleChange(event) {
         const {value, name} = event.currentTarget
         setMeme(prevMeme => ({
@@ -29,6 +21,16 @@ export default function Main() {
             [name]: value
         }))
     }
+    function getMeme(){
+        if (allMemes.length>0){
+            const randomMeme=allMemes[Math.floor(Math.random()* allMemes.length)]
+            setMeme(prev=>({
+                ...prev,
+                imageUrl:randomMeme.url
+            }))
+        }
+    }
+
 
     return (
         <main>
@@ -52,7 +54,7 @@ export default function Main() {
                         value={meme.bottomText}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={getMeme}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
