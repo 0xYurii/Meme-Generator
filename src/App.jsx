@@ -1,17 +1,12 @@
-import WindowTracker from "./WindowTracker"
-import { useState } from "react"
-export default function App() {
+import Header from "./components/Header"
+import Main from "./components/Main"
 
-    const[show,setShow]=useState(true)
-    function toggle(){
-        setShow(!show)
-    }
+export default function App() {
+    
     return (
-        <main className="container">
-            <button onClick={toggle}>
-                Toggle WindowTracker
-            </button>
-            {show&&<WindowTracker />}
-        </main>
+        <>
+            <Header />
+            <Main />
+        </>
     )
 }
