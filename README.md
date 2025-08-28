@@ -3,7 +3,7 @@
 
 A fun and simple web application built with React that allows you to create your own memes. Choose from a vast library of popular meme templates, add your custom top and bottom text, and generate a new meme with the click of a button!
 
-![Meme Generator Screenshot](./src/images/screenshot.png)
+![Meme Generator Screenshot](./src/images/image.png)
 
 ## ✨ Features
 
